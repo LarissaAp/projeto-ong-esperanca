@@ -1,6 +1,6 @@
 :root {
     /* Cores */
-    --cor-primaria: #4CAF50;
+    --cor-primaria: #2E7D32;
     --cor-primaria-escura: #388E3C;
     --cor-primaria-clara: #81C784;
     --cor-secundaria: #2E7D32;
@@ -8,6 +8,7 @@
     --cor-fundo: #F5F5F5;
     --cor-neutra: #333333;
     --cor-branco: #FFFFFF;
+    --cor-botao: #4CAF50;
 
     /* Tipografia */
     --fonte-principal: Arial, sans-serif;
@@ -24,6 +25,16 @@
     --espaco-4: 24px;
     --espaco-5: 32px;
     --espaco-6: 48px;
+}
+
+html.modo-escuro body {
+    --cor-fundo: #121212;
+    --cor-neutra: #FFFFFF;
+    --cor-branco: #1E1E1E;
+    --cor-primaria: #81C784;
+    --cor-primaria-escura: #A5D6A7;
+    --cor-secundaria: #388E3C;
+    --cor-destaque: #FFD54F;
 }
 
 body {
@@ -59,6 +70,14 @@ nav a {
     color: var(--cor-branco);
     text-decoration: none;
     font-weight: bold;
+}
+
+html.modo-escuro body nav a {
+    color: #FFFFFF;
+}
+
+html.modo-escuro body .submenu a {
+    color: #FFFFFF;
 }
 
 nav a:hover {
@@ -118,7 +137,7 @@ footer {
 }
 
 form {
-    background-color: white;
+    background-color: var(--cor-branco);
     padding: 25px;
     border-radius: 8px;
     width: 100%;
@@ -142,15 +161,17 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    background-color: var(--cor-branco);
+    color: var(--cor-neutra);
 }
 
 form input:focus,
 form select:focus,
 form textarea:focus {
-    border-color: var(--cor-primaria);
-    outline: none;
+    border-color: var(--cor-primaria-escura);
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(76, 175, 79, 0.392);
-    transition: 0.3s;
 }
 
 form input:required:valid,
@@ -164,8 +185,8 @@ form button {
     width: 100%;
     margin-top: 25px;
     padding: 12px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #2E7D32;
+    color: #FFFFFF;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -201,7 +222,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #4CAF50;
+    color: var(--cor-secundaria);
     padding: 0 10px;
 }
 
@@ -230,13 +251,13 @@ section img {
     }
 
      nav > ul {
-    display: none;
-    flex-direction: column;
-    gap: var(--espaco-2);
+        display: none;
+        flex-direction: column;
+        gap: var(--espaco-2);
     }
 
      nav > ul.menu-aberto {
-    display: flex;
+        display: flex;
     }
 
     main {
@@ -391,6 +412,11 @@ section img {
     font-weight: bold;
 }
 
+html.modo-escuro body .badge {
+    background-color: #8A6D00;
+    color: #FFFFFF;
+}
+
 .alerta {
     display: none;
     padding: 12px 16px;
@@ -432,4 +458,9 @@ section img {
 .toast.mostrar {
     opacity: 1;
     transform: translateY(0);
+}
+
+#btn-tema:focus {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
 }

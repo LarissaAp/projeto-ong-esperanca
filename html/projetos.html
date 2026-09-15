@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONG - Projetos</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script>
+        if (localStorage.getItem("modoEscuro") === "ativado") {
+        document.documentElement.classList.add("modo-escuro");
+        }
+    </script>
 </head>
     
 <body>
@@ -12,6 +19,11 @@
     <header>
         <h1>ONG Esperança</h1>
         <p>Transformando vidas por meio da solidariedade.</p>
+
+        <button id="btn-tema" type="button" aria-label="Ativar modo escuro">
+           🌙 Modo escuro
+        </button>
+
     </header>
 
    <nav>
@@ -35,7 +47,7 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="app">
 
         <section>
             <h2>Nossas iniciativas</h2>
@@ -78,6 +90,6 @@
         <p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p>
     </footer>
 
-<script src="js/script.js"></script>
+<script type="module" src="../js/script.js"></script>
 </body>
 </html>
