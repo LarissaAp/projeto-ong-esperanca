@@ -90,6 +90,7 @@ export function configurarFormulario() {
             } else {
                 cpf.classList.add("campo-invalido");
                 cpf.classList.remove("campo-valido");
+                document.getElementById("cpfErro").textContent = "";
             }
         });
     }
@@ -120,6 +121,7 @@ export function configurarFormulario() {
             } else {
                 telefone.classList.add("campo-invalido");
                 telefone.classList.remove("campo-valido");
+                document.getElementById("telefoneErro").textContent = "";
             }
         });
     }
@@ -185,6 +187,7 @@ export function configurarFormulario() {
             const cpfNumeros = cpf.value.replace(/\D/g, "");
 
             if (!validarCPF(cpfNumeros)) {
+                document.getElementById("cpfErro").textContent = "Digite um CPF válido.";
                 mensagemFeedback.textContent = "Digite um CPF válido.";
                 mensagemFeedback.className = "alerta erro";
                 cpf.focus();
@@ -197,6 +200,7 @@ export function configurarFormulario() {
                 telefoneNumeros.length !== 10 &&
                 telefoneNumeros.length !== 11
             ) {
+                document.getElementById("telefoneErro").textContent = "Digite um telefone válido.";
                 mensagemFeedback.textContent = "Digite um telefone válido.";
                 mensagemFeedback.className = "alerta erro";
                 telefone.focus();
@@ -205,7 +209,10 @@ export function configurarFormulario() {
 
             const cepNumeros = cep.value.replace(/\D/g, "");
 
+            document.getElementById("cepErro").textContent = "";
+
             if (cepNumeros.length !== 8) {
+                document.getElementById("cepErro").textContent = "Digite um CEP válido.";
                 mensagemFeedback.textContent = "Digite um CEP válido.";
                 mensagemFeedback.className = "alerta erro";
                 cep.focus();

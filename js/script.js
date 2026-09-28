@@ -136,13 +136,16 @@ function carregarCadastro() {
                 <input type="email" id="email" name="email" required>
 
                 <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" maxlength="14" inputmode="numeric" pattern="[0-9.\\-]+" required>
+                <input type="text" id="cpf" name="cpf" maxlength="14" inputmode="numeric" pattern="[0-9.\\-]+" aria-describedby="cpfErro" required>
+                <small id="cpfErro" aria-live="polite"></small>
 
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" maxlength="15" inputmode="numeric" required>
+                <input type="tel" id="telefone" name="telefone" maxlength="15" inputmode="numeric" aria-describedby="telefoneErro" required>
+                <small id="telefoneErro" aria-live="polite"></small>
               
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" required>
+                <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" aria-describedby="cepErro" required>
+                <small id="cepErro" aria-live="polite"></small>
 
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" required>
@@ -182,7 +185,10 @@ function carregarInicio() {
         <section>
             <h2>Quem somos</h2>
 
-            <img src="../imagens/ong.jpg" alt="Mãos unidas representando solidariedade e colaboração">
+           <picture>
+               <source srcset="../imagens/ong.webp" type="image/webp">
+               <img src="../imagens/ong.jpg" alt="Mãos unidas representando solidariedade e colaboração">
+           </picture>
 
             <p>
                 A ONG Esperança é uma organização dedicada a promover
